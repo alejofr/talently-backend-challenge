@@ -153,12 +153,14 @@ describe('Villa Peruana', function () {
 
 
         context('Tickets VIP', function () {
-            /*
-                "Backstage passes", like Pisco Peruano, increases in Quality as it's SellIn
-                value approaches; Quality increases by 2 when there are 10 days or
-                less and by 3 when there are 5 days or less but Quality drops to
-                0 after the concert
-             */
+            
+                /*
+                    "Backstage passes", like Pisco Peruano, increases in Quality as it's SellIn
+                    value approaches; Quality increases by 2 when there are 10 days or
+                    less and by 3 when there are 5 days or less but Quality drops to
+                    0 after the concert
+                */
+             
             it ('actualiza tickets VIP antes de la fecha del evento', function () {
                 $item = VillaPeruana::of('Ticket VIP al concierto de Pick Floid', 10, 11);
 
@@ -168,7 +170,7 @@ describe('Villa Peruana', function () {
                 expect($item->sellIn)->toBe(10);
             });
 
-            it ('actualiza tickets VIP cerca a la fecha del evento', function () {
+             it ('actualiza tickets VIP cerca a la fecha del evento', function () {
                 $item = VillaPeruana::of('Ticket VIP al concierto de Pick Floid', 10, 10);
 
                 $item->tick();
