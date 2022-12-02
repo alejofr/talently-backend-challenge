@@ -251,7 +251,7 @@ describe('Villa Peruana', function () {
         context ("Producto de Café", function () {
 
             it ('actualiza Producto de Café antes de la fecha de venta', function () {
-               $item = GildedRose::of('Café Altocusco', 10, 10);
+               $item = VillaPeruana::of('Café Altocusco', 10, 10);
 
                $item->tick();
 
@@ -263,7 +263,7 @@ describe('Villa Peruana', function () {
             });
 
              it ('actualiza Producto de Café con cualidad 0', function () {
-                $item = GildedRose::of('Café Altocusco', 0, 10);
+                $item = VillaPeruana::of('Café Altocusco', 0, 10);
 
                 $item->tick();
 

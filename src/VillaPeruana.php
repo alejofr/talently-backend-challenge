@@ -33,17 +33,20 @@ class VillaPeruana
             case 'normal':
                 $this->helper($this->sellIn);
                 break;
+            case 'Café Altocusco':
+                $this->helper($this->sellIn, true, false, $this->sellIn <= 0 ? 3 : 2);
+                break;
             default: //como los productos de tumi no, se vende, las propiedades de sellin y quality, son la misma
                 break;
         }
     }
 
-    public function helper($day = 10, $isdegration = true, $isRange = false)
+    public function helper($day = 10, $isdegration = true, $isRange = false, $initQuality = 1)
     {
-        $quality = 1;
+        $quality = $initQuality;
 
         if( $day <= 0 ){
-            $quality = 2;
+            $quality = $quality + 1;
         }
 
         if( $isRange && ( $day > 0 && $day <= 10 ) ){
